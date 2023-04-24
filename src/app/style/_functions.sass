@@ -1,0 +1,14 @@
+@mixin flex($type: row, $dir: start, $reverse: false)
+
+  @if $reverse
+    $type: $type + "-reverse"
+  display: flex
+  flex-direction: $type
+  @if $dir == center
+    justify-content: center
+    align-items: center
+    align-content: stretch
+  @else
+    justify-content: flex-start
+    align-items: stretch
+    align-content: stretch

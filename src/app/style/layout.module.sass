@@ -1,0 +1,191 @@
+@import '_functions'
+
+$color-1: #3c4ce5
+$color-2: #98b29f
+$color-3: #0f1a30
+
+// Container
+  
+.container
+  width: 100%
+  max-width: 1200px
+  margin-left: auto
+  margin-right: auto
+  position: relative
+
+// Page
+
+.page
+  min-height: 100vh
+  @include flex(column)
+
+.main
+  flex: 1 1 auto
+  //background: $color-3
+  //background: rgba(15, 26, 48, 1)
+
+// Header
+
+.headtab,
+.foottab
+  width: 100%
+  height: 100%
+  fill: rgba(15, 26, 48, 1)
+  position: absolute
+  z-index: 1
+
+.headtab
+  opacity: 0
+  left: 50%
+  bottom: -5px
+  transform: translateX(-50%) rotate(180deg)
+
+.foottab
+  left: 50%
+  top: -5px
+  width: auto
+  height: 40px
+  transform: translateX(-50%)
+
+.footmenu
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  bottom: 10px
+  font-size: 11px
+  font-weight: 300
+  z-index: 5
+  opacity: .4w
+  text-transform: uppercase
+
+.header,
+.footer
+  width: 100%
+  position: relative
+  background: rgba(0,0,0,.3)
+  .container
+    height: 40px
+  ul
+    padding: 0
+    margin: 0
+  li
+    list-style-type: none
+
+.header
+  //background: #f2f2f2
+  h1
+    margin: 0 20px
+    padding: 0
+    line-height: 0
+    @media (max-width: 600px)
+      margin: 0
+  .nav
+    position: relative
+    z-index: 10
+    @include flex(row, center)
+    height: 40px
+    ul
+      flex: 1 0 auto
+      @include flex(row, center)
+      li
+        @include flex(row, center)
+        a
+          @include flex(row, center)
+          pointer-events: none
+          opacity: .3
+  ul
+    li
+      line-height: 13px
+      flex: 1 1 auto
+      a
+        font-size: 13px
+        font-weight: 500
+        display: block
+        width: 100%
+        padding: 0 10px
+        color: #f2f2f2
+        border-bottom: 2px solid $color-3
+        margin-bottom: -4px
+        height: 40px
+        transition: color 0.2s, border-color 0.2s
+        &:hover,
+        &:active
+          color: $color-1
+          border-color: $color-1
+      svg
+        max-width: 14px
+        max-height: 14px
+        margin-right: 6px
+        @media (max-width: 600px)
+          display: none
+
+.navLeft
+  order: -1
+
+.navRight
+  order: 2
+  text-align: right
+
+.subnav
+  position: absolute
+  top: 40px
+  font-size: 12px
+  width: 100%
+  padding: 10px
+  z-index: 10
+  @include flex(row, center)
+  align-items: flex-start
+  @media (max-width: 600px)
+    padding-top: 30px
+    @include flex(column, center)
+    text-align: center   
+
+  & > *
+    flex: 1 0 auto
+  
+  li
+    padding: 3px 0
+
+.subNavLeft
+  text-align: left
+
+.subNavRight
+  text-align: right
+  opacity: .3
+  @media (max-width: 600px)
+    text-align: center
+    order: $color-2
+    padding-bottom: 30px
+
+// Main
+
+.bgVideo
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: -1
+  video
+    min-width: 100%
+    min-height: 100%
+
+.footer
+  color: rgba(255,255,255,.2)
+
+.bgvideo
+  position: fixed
+  z-index: -1
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  //background: url(../../../public/images/stillbg.jpg) no-repeat 50% 50%
+  background-size: cover
+
+.hovermenu
+  a
+    display: block
+    font-size: 18px
+    color: #fff
+    margin: 5px 0

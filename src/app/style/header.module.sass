@@ -1,0 +1,67 @@
+@import '_functions'
+
+// Container
+  
+.container
+  width: 100%
+  max-width: 1200px
+  margin-left: auto
+  margin-right: auto
+  position: relative
+
+// Page
+
+.page
+  min-height: 100vh
+  @include flex(column)
+
+.main
+  flex: 1 1 auto
+
+// Header
+
+.headtab,
+.foottab
+  width: 100%
+  height: 100%
+  fill: rgb(var(--background-end-rgb))
+  position: absolute
+  overflow: hidden
+  z-index: 1
+
+.headtab
+  opacity: 0
+  left: 50%
+  bottom: -5px
+  transform: translateX(-50%) rotate(180deg)
+
+.foottab
+  left: 0
+  top: -5px
+
+.header,
+.footer
+  width: 100%
+  position: relative
+  background: rgba(0,0,0,.6)
+  .container
+    height: 40px
+  ul
+    padding: 0
+    margin: 0
+  li
+    list-style-type: none
+
+.header
+  h1
+    margin: 0
+    padding: 0
+    line-height: 0
+  .nav
+    @include flex(row, center)
+
+.nav
+  position: relative
+  z-index: 10
+
+.footer
