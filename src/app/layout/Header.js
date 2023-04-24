@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 //import Container from '../components/Container.js'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoins, faBookCopy } from '@fortawesome/pro-duotone-svg-icons'
+
 import Logo from '../../../public/images/rayn-logo-02.svg'
 import styles from '../style/layout.module.sass'
 
@@ -19,12 +18,12 @@ export default function Header({ children }) {
         </h1>
         <ul className={styles.navLeft}>
           <li>
-            <Link href="#"><FontAwesomeIcon icon={faCoins} /> Play Now</Link>
+            <Link href="#"> Play Now</Link>
           </li>
         </ul>
         <ul className={styles.navRight}>
           <li>
-            <Link href="#"><FontAwesomeIcon icon={faBookCopy} /> Learn Now</Link>
+            <Link href="#"> Learn Now</Link>
           </li>
         </ul>
       </div>
